@@ -1,16 +1,50 @@
-# React + Vite
+# TechNav: The Ultimate Career Navigation Matrix 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**TechNav** is a professional-grade web application engineered to solve the chronic confusion faced by Computer Science students when navigating the vast ecosystem of modern tech careers.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 💡 The Problem
 
-## React Compiler
+The tech industry is evolving at a breakneck speed, with over **40+ specialized career domains**. Students face:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Analysis Paralysis:** Inability to choose a path due to scattered information.
+- **Misalignment:** Choosing a domain that contradicts their natural cognitive strengths.
+- **Lack of Roadmap:** A disconnect between college curriculum and industry-ready skill requirements.
 
-## Expanding the Oxlint configuration
+## 🚀 The Solution
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+TechNav standardizes the transition from student to professional by creating a **Career Matrix**:
+
+- **Natural Interest Quiz:** An algorithmic assessment that maps cognitive responses to compatible tech domains.
+- **Context-Aware AI Mentor:** Integrated AI that provides real-time, domain-specific guidance, salary analysis, and roadmap advice.
+- **Structured Roadmaps:** Step-by-step execution guides for every single career track.
+- **Market Intelligence:** Real-time data visualization on market demands and salary packages.
+
+## 🛠 Tech Stack
+
+- **Frontend:** React.js, Tailwind CSS, Framer Motion, GSAP.
+- **Backend:** Node.js, Express, MongoDB.
+- **AI Integration:** Groq API (Llama 3).
+- **Deployment:** Vercel.
+
+## ✨ Key Features
+
+- **Fluid UX:** Immersive custom cursor and smooth scrolling (Lenis).
+- **Spotlight Grid:** Interactive UI that reacts to mouse movement.
+- **Interactive Roadmap:** A sleek, glowing timeline for every career path.
+- **Smart AI Engine:** A dedicated AI Mentor (Liquid Core Orb).
+- **Responsive Design:** Fully optimized hamburger navigation for mobile.
+
+## 👨‍💻 Developer
+
+Developed by **Manik Kori**  
+_Institution: JMS Group of Institutions_
+
+## 📦 How to Run Locally
+
+1. **Clone the repository:** `git clone <your-repo-url>`
+2. **Install dependencies:** `npm install`
+3. **Setup Environment Variables:** Create a `.env` file in the root folder:
+   `VITE_GROQ_API_KEY=your_actual_api_key_here`
+4. **Start the server:** `npm run dev`
