@@ -1,32 +1,25 @@
-import { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Lenis from "@studio-freight/lenis";
-import { useAppStore } from "./store/useAppStore";
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Lenis from '@studio-freight/lenis';
 
 // Components & Pages
-import Navbar from "./components/layout/Navbar";
-import DevBadge from "./components/ui/DevBadge";
-import CursorGlow from "./components/ui/CursorGlow";
-import CustomCursor from "./components/ui/CustomCursor";
-import Home from "./pages/Home";
-import Careers from "./pages/Careers";
-import CareerDetails from "./pages/CareerDetails";
-import Quiz from "./pages/Quiz";
+import Navbar from './components/layout/Navbar';
+import DevBadge from './components/ui/DevBadge';
+import CursorGlow from './components/ui/CursorGlow';
+import CustomCursor from './components/ui/CustomCursor';
+import Home from './pages/Home';
+import Careers from './pages/Careers';
+import CareerDetails from './pages/CareerDetails';
+import Quiz from './pages/Quiz';
 
 function App() {
-  const theme = useAppStore((state) => state.theme);
-
-  // Initialize Smooth Scrolling (Lenis) & Theme on Load
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    // strict dark mode enforced
+    document.documentElement.classList.add('dark');
 
     const lenis = new Lenis({
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
       smooth: true,
     });
 
@@ -37,21 +30,15 @@ function App() {
     requestAnimationFrame(raf);
 
     return () => lenis.destroy();
-  }, [theme]);
+  }, []);
 
   return (
     <Router>
-      <div className="min-h-screen bg-white dark:bg-[#0a0a0a] text-gray-900 dark:text-white selection:bg-blue-500/30 transition-colors duration-300 relative">
-        {/* The ambient background light */}
+      <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-blue-500/30 relative">
         <CursorGlow />
-
-        {/* The actual custom pointer replacing the default mouse */}
         <CustomCursor />
-
-        {/* Global Navigation */}
         <Navbar />
-
-        {/* Page Routes */}
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/careers" element={<Careers />} />
@@ -59,7 +46,6 @@ function App() {
           <Route path="/quiz" element={<Quiz />} />
         </Routes>
 
-        {/* Global Floating Dev Badge */}
         <DevBadge />
       </div>
     </Router>

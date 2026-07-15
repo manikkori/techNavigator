@@ -7,7 +7,6 @@ import {
   Compass,
   BrainCircuit,
   Target,
-  Sparkles,
   Layout,
   BarChart3,
   HelpCircle,
@@ -53,18 +52,8 @@ export default function Home() {
   ];
 
   return (
-    <main className="relative min-h-screen flex flex-col pt-24 px-4 overflow-hidden bg-[#0a0a0a]">
-      {/* --- NEW PHOTO BACKGROUND LAYER --- */}
-      <div className="absolute inset-0 z-[-2]">
-        <img
-          src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
-          alt="Tech Matrix"
-          className="w-full h-full object-cover opacity-20 filter grayscale blur-[1px]"
-        />
-        {/* Gradient mask to blend the photo smoothly into the dark UI */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/80 to-[#0a0a0a]"></div>
-      </div>
-
+    <main className="relative min-h-screen flex flex-col pt-24 px-4 overflow-hidden bg-transparent">
+      {/* Background is now fully handled by SpotlightGrid */}
       <SpotlightGrid />
 
       <section className="flex-grow flex flex-col items-center justify-center text-center max-w-5xl mx-auto min-h-[75vh]">
@@ -135,7 +124,7 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-6 text-lg text-gray-400 leading-relaxed bg-[#0a0a0a]/40 p-6 rounded-3xl border border-white/5 backdrop-blur-sm"
+            className="space-y-6 text-lg text-gray-400 leading-relaxed bg-[#0a0a0a]/60 p-6 rounded-3xl border border-white/5 backdrop-blur-md"
           >
             <p>
               Maximum students face severe anxiety trying to pick between Web
@@ -160,9 +149,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-[#171717]/60 backdrop-blur-md border border-[#262626] p-6 rounded-3xl hover:border-blue-500/50 transition-colors shadow-lg relative overflow-hidden group"
+                className="bg-[#171717]/80 backdrop-blur-md border border-[#262626] p-6 rounded-3xl hover:border-blue-500/50 transition-colors shadow-lg relative overflow-hidden group"
               >
-                {/* Glow effect on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-colors duration-500"></div>
                 <div className="mb-4 relative z-10">{feat.icon}</div>
                 <h4 className="text-xl font-bold text-white mb-2 relative z-10">
