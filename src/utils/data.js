@@ -1,5 +1,5 @@
 export const careersData = [
-  // 1. Software Development & Engineering
+  
   {
     category: "Development",
     title: "Frontend Developer",
