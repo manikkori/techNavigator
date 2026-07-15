@@ -1,50 +1,84 @@
 # TechNav: The Ultimate Career Navigation Matrix 🚀
 
-**TechNav** is a professional-grade web application engineered to solve the chronic confusion faced by Computer Science students when navigating the vast ecosystem of modern tech careers.
+**TechNav** is a premium, AI-powered web platform engineered to solve the chronic confusion faced by Computer Science students when navigating the vast ecosystem of modern tech careers. 
+
+---
+
+## 📸 Project Screenshots
+
+### 1. Home Page & Spotlight Matrix
+![Home Page](./photos/home.png)
+
+### 2. Context-Aware AI Mentor (Liquid Core)
+![AI Mentor Open](./photos/withai.png)
+
+### 3. Natural Interest Career Quiz
+![Career Quiz Interface](./photos/quiz.png)
+
+### 4. Explore tech careers
+![Explore tech careers](./photos/techcareers.png) 
 
 ---
 
 ## 💡 The Problem
-
-The tech industry is evolving at a breakneck speed, with over **40+ specialized career domains**. Students face:
-
-- **Analysis Paralysis:** Inability to choose a path due to scattered information.
-- **Misalignment:** Choosing a domain that contradicts their natural cognitive strengths.
-- **Lack of Roadmap:** A disconnect between college curriculum and industry-ready skill requirements.
+The tech industry is evolving at a breakneck speed, with over **40+ specialized career domains**. Students constantly face:
+* **Analysis Paralysis:** Inability to choose a path due to scattered, fragmented information across the internet.
+* **Misalignment:** Wasting semesters on domains that contradict their natural cognitive strengths.
+* **Lack of Execution:** A massive disconnect between knowing a field and having a structured, industry-ready roadmap to master it.
 
 ## 🚀 The Solution
+TechNav standardizes the transition from student to professional by creating a personalized **Career Matrix**:
+* **Natural Interest Quiz:** An algorithmic assessment that maps user cognitive responses to the most compatible tech domains.
+* **Context-Aware AI Mentor:** A real-time, domain-specific AI assistant that guides students, answers doubts, and provides salary insights.
+* **Structured Roadmaps:** Step-by-step execution timelines for every single career track.
+* **Market Intelligence:** Live data visualization mapping market demands and actual salary packages.
 
-TechNav standardizes the transition from student to professional by creating a **Career Matrix**:
+---
 
-- **Natural Interest Quiz:** An algorithmic assessment that maps cognitive responses to compatible tech domains.
-- **Context-Aware AI Mentor:** Integrated AI that provides real-time, domain-specific guidance, salary analysis, and roadmap advice.
-- **Structured Roadmaps:** Step-by-step execution guides for every single career track.
-- **Market Intelligence:** Real-time data visualization on market demands and salary packages.
+## ✨ Key Features & UX Innovations
+* **Immersive Hacker/Tech UI:** Locked in a strict dark theme with a dynamic **Spotlight Grid** that reacts to mouse movements.
+* **Fluid Navigation:** Integrated **Custom Cursor** (trailing ring mechanics) and **Lenis Smooth Scrolling** for a premium web experience.
+* **Liquid AI Orb:** A floating, animated AI mentor component available globally across the application.
+* **Distraction-Free Zones:** Specialized navigation states (e.g., immediate "Exit Quiz" escape hatches) to keep users focused.
+* **Fully Responsive:** Sleek Glassmorphism hamburger menus designed specifically for mobile users.
+
+---
 
 ## 🛠 Tech Stack
+We built this platform using a modern, high-performance web architecture:
 
-- **Frontend:** React.js, Tailwind CSS, Framer Motion, GSAP.
-- **Backend:** Node.js, Express, MongoDB.
-- **AI Integration:** Groq API (Llama 3).
-- **Deployment:** Vercel.
+### **Frontend**
+* **React 19 & Vite:** Lightning-fast UI rendering and build tooling.
+* **Tailwind CSS:** Utility-first styling for the strict dark-mode matrix UI.
+* **Framer Motion & GSAP:** Complex component animations, page transitions, and text reveals.
+* **React Router DOM:** Seamless Single Page Application (SPA) routing.
 
-## ✨ Key Features
+### **Backend & AI Engine**
+* **Node.js & Express:** Robust server-side architecture.
+* **MongoDB:** Database infrastructure.
+* **Groq API (Llama 3):** High-speed, context-aware AI text generation for the Mentor module.
 
-- **Fluid UX:** Immersive custom cursor and smooth scrolling (Lenis).
-- **Spotlight Grid:** Interactive UI that reacts to mouse movement.
-- **Interactive Roadmap:** A sleek, glowing timeline for every career path.
-- **Smart AI Engine:** A dedicated AI Mentor (Liquid Core Orb).
-- **Responsive Design:** Fully optimized hamburger navigation for mobile.
+### **Deployment**
+* **Vercel:** Optimized production hosting with custom build configurations and route rewrites.
 
-## 👨‍💻 Developer
-
-Developed by **Manik Kori**  
-_Institution: JMS Group of Institutions_
+---
 
 ## 📦 How to Run Locally
 
-1. **Clone the repository:** `git clone <your-repo-url>`
-2. **Install dependencies:** `npm install`
-3. **Setup Environment Variables:** Create a `.env` file in the root folder:
+1. **Clone the repository:**
+   `git clone [https://github.com/manikkori/techNavigator.git](https://github.com/manikkori/techNavigator.git)`
+
+2. **Install dependencies:**
+   `npm install --legacy-peer-deps`
+
+3. **Setup Environment Variables:**
+   Create a `.env` file in the root folder and add your AI API key:
    `VITE_GROQ_API_KEY=your_actual_api_key_here`
-4. **Start the server:** `npm run dev`
+
+4. **Start the local development server:**
+   `npm run dev`
+
+---
+
+## Developer
+Developed by Manik.
