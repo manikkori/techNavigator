@@ -1,26 +1,26 @@
-import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Lenis from '@studio-freight/lenis';
+import { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Lenis from "lenis";
+import "lenis/dist/lenis.css";
 
 // Components & Pages
-import Navbar from './components/layout/Navbar';
-import DevBadge from './components/ui/DevBadge';
-import CursorGlow from './components/ui/CursorGlow';
-import CustomCursor from './components/ui/CustomCursor';
-import Home from './pages/Home';
-import Careers from './pages/Careers';
-import CareerDetails from './pages/CareerDetails';
-import Quiz from './pages/Quiz';
+import Navbar from "./components/layout/Navbar";
+import DevBadge from "./components/ui/DevBadge";
+import CursorGlow from "./components/ui/CursorGlow";
+import CustomCursor from "./components/ui/CustomCursor";
+import Home from "./pages/Home";
+import Careers from "./pages/Careers";
+import CareerDetails from "./pages/CareerDetails";
+import Quiz from "./pages/Quiz";
 
 function App() {
   useEffect(() => {
     // strict dark mode enforced
-    document.documentElement.classList.add('dark');
+    document.documentElement.classList.add("dark");
 
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
-      smooth: true,
+      lerp: 0.1,
+      smoothWheel: true,
     });
 
     function raf(time) {
@@ -38,7 +38,7 @@ function App() {
         <CursorGlow />
         <CustomCursor />
         <Navbar />
-        
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/careers" element={<Careers />} />
