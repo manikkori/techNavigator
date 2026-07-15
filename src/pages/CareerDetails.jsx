@@ -111,6 +111,27 @@ export default function CareerDetails() {
     }
   };
 
+  // 🚀 PDF Download Logic added here (Zero external npm install)
+  const handleDownloadPDF = () => {
+    const element = document.getElementById("roadmap-content");
+    const script = document.createElement("script");
+    script.src =
+      "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
+
+    script.onload = () => {
+      const options = {
+        margin: 0.3,
+        filename: `TechNav_${career.title.replace(/\s+/g, "_")}_Roadmap.pdf`,
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, backgroundColor: "#0a0a0a" },
+        jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+      };
+      window.html2pdf().set(options).from(element).save();
+    };
+
+    document.body.appendChild(script);
+  };
+
   if (!career || !stats)
     return (
       <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center text-white font-semibold">
@@ -141,12 +162,16 @@ export default function CareerDetails() {
     <div className="min-h-screen pt-24 pb-20 px-4 max-w-6xl mx-auto relative bg-[#0a0a0a] text-white">
       <button
         onClick={() => navigate("/careers")}
-        className="flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors"
+        className="flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors cursor-none"
       >
         <ChevronLeft className="w-5 h-5" /> Back to Careers
       </button>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      {/* 🔴 Added id="roadmap-content" to this main grid so it gets printed in PDF */}
+      <div
+        id="roadmap-content"
+        className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 -m-4"
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -175,7 +200,12 @@ export default function CareerDetails() {
             <h2 className="text-2xl font-bold flex items-center gap-3">
               <Sparkles className="w-6 h-6 text-cyan-400" /> Execution Roadmap
             </h2>
-            <button className="hidden sm:flex items-center gap-2 text-sm text-gray-400 hover:text-white bg-[#0a0a0a] px-4 py-2 rounded-lg border border-[#262626] transition-colors">
+
+            {/* 🔴 Added onClick={handleDownloadPDF} to your exact button */}
+            <button
+              onClick={handleDownloadPDF}
+              className="hidden sm:flex items-center gap-2 text-sm text-gray-400 hover:text-white bg-[#0a0a0a] px-4 py-2 rounded-lg border border-[#262626] transition-colors cursor-none"
+            >
               <Download className="w-4 h-4" /> Download PDF
             </button>
           </div>
@@ -281,7 +311,7 @@ export default function CareerDetails() {
                 </div>
                 <button
                   onClick={() => setIsChatOpen(false)}
-                  className="hover:bg-white/20 p-1 rounded-md transition-colors"
+                  className="hover:bg-white/20 p-1 rounded-md transition-colors cursor-none"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -330,12 +360,12 @@ export default function CareerDetails() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
                   placeholder="Ask a question..."
-                  className="flex-grow bg-[#171717] border border-[#262626] rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-blue-500 transition-colors text-white"
+                  className="flex-grow bg-[#171717] border border-[#262626] rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-blue-500 transition-colors text-white cursor-none"
                 />
                 <button
                   onClick={handleSendMessage}
                   disabled={isTyping}
-                  className="bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white p-2.5 rounded-xl transition-colors"
+                  className="bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white p-2.5 rounded-xl transition-colors cursor-none"
                 >
                   <Send className="w-4 h-4" />
                 </button>
@@ -348,7 +378,7 @@ export default function CareerDetails() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsChatOpen(!isChatOpen)}
-          className="relative w-16 h-16 flex items-center justify-center group"
+          className="relative w-16 h-16 flex items-center justify-center group cursor-none"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full blur-xl opacity-40 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
           <div className="absolute inset-1 bg-[#0a0a0a] rounded-full border border-gray-700/50 z-10 shadow-inner"></div>
