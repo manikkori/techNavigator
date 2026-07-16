@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    /* Strict Dark mode locked */
+    
     @apply bg-[#0a0a0a] text-white font-sans antialiased overflow-x-hidden;
     cursor: none;
   }
