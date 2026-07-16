@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 
-// Components & Pages
+
 import Navbar from "./components/layout/Navbar";
 import DevBadge from "./components/ui/DevBadge";
 import CursorGlow from "./components/ui/CursorGlow";
@@ -15,7 +15,7 @@ import Quiz from "./pages/Quiz";
 
 function App() {
   useEffect(() => {
-    // strict dark mode enforced
+
     document.documentElement.classList.add("dark");
 
     const lenis = new Lenis({
