@@ -59,7 +59,7 @@ export default function DevBadge() {
               </a>
               {/* Custom LinkedIn SVG */}
               <a
-                href="#"
+                href="https://www.linkedin.com/in/manik-kori/"
                 target="_blank"
                 rel="noreferrer"
                 className="text-gray-400 hover:text-primary transition-transform hover:scale-110"
@@ -81,7 +81,7 @@ export default function DevBadge() {
               </a>
               {/* Custom Instagram SVG */}
               <a
-                href="#"
+                href="https://www.instagram.com/_the.manik"
                 target="_blank"
                 rel="noreferrer"
                 className="text-gray-400 hover:text-pink-500 transition-transform hover:scale-110"
